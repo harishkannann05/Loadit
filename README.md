@@ -8,8 +8,6 @@
 
 ## 🎨 Logo & Slogan
 
-📸 **Screenshot Placeholder:**
-
 ![logo](screenshots/Load.it.png)
 
 The project features a **custom hand-crafted logo** designed specifically for Load It.
@@ -24,9 +22,6 @@ This represents the simplicity and efficiency of the platform—from booking to 
 
 ## 🏠 Homepage
 
-📸 **Screenshot Placeholder:**
-
-
 ![home page](<screenshots/Screenshot 2025-12-29 193948.png>)
  
 * Interactive and modern UI design
@@ -37,8 +32,6 @@ This represents the simplicity and efficiency of the platform—from booking to 
 ---
 
 ## 📦 Booking Page
-
-📸 **Screenshot Placeholder:**
 
 ![booking page](<screenshots/Screenshot 2025-12-29 194058.png>)
 
@@ -71,8 +64,6 @@ This ensures accurate load matching and smooth coordination.
 The platform supports **three major user roles**, each with a dedicated login, signup, and dashboard:
 
 ### 🚛 Driver Dashboard
-
-📸 **Screenshot Placeholder:**
 
 ![driver signup](<screenshots/Screenshot 2025-12-29 195250.png>)
 ![dashboard](<screenshots/Screenshot 2025-12-29 195136.png>)
