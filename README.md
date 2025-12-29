@@ -10,12 +10,8 @@
 
 📸 **Screenshot Placeholder:**
 
-<<<<<<< HEAD
 ![logo](screenshots/Load.it.png)
-=======
-![logo](image-1.png)
 
->>>>>>> 3cf8f0da99da9ae2e91bc8034e3040a030af8c7c
 The project features a **custom hand-crafted logo** designed specifically for Load It.
 
 **Slogan:**
@@ -31,12 +27,8 @@ This represents the simplicity and efficiency of the platform—from booking to 
 📸 **Screenshot Placeholder:**
 
 
-<<<<<<< HEAD
 ![home page](<screenshots/Screenshot 2025-12-29 193948.png>)
-=======
-![home page](image.png)
-
->>>>>>> 3cf8f0da99da9ae2e91bc8034e3040a030af8c7c
+ 
 * Interactive and modern UI design
 * Clean layout with smooth navigation
 * Highlights core features such as booking, tracking, and reliability
@@ -72,7 +64,6 @@ This ensures accurate load matching and smooth coordination.
 * Helps reduce last-minute cancellations and ensures commitment from users
 * Payment status is linked with booking and load approval workflow
 
-
 ---
 
 ## 👥 User Roles & Dashboards
@@ -94,8 +85,6 @@ The platform supports **three major user roles**, each with a dedicated login, s
 
 ### 🏢 Owner Dashboard
 
-📸 **Screenshot Placeholder:**
-
 ![signup](<screenshots/Screenshot 2025-12-29 194538.png>)
 ![signup2](<screenshots/Screenshot 2025-12-29 194608.png>)
 ![owner](<screenshots/Screenshot 2025-12-29 195002.png>)
@@ -105,8 +94,6 @@ The platform supports **three major user roles**, each with a dedicated login, s
 * Track income and saved operational costs
 
 ### 🙋 User Dashboard
-
-📸 **Screenshot Placeholder:**
 
 ![user](<screenshots/Screenshot 2025-12-29 194414.png>) 
 ![user](<screenshots/Screenshot 2025-12-29 194447.png>)
@@ -119,8 +106,6 @@ The platform supports **three major user roles**, each with a dedicated login, s
 ---
 
 ## 🛠️ Admin Dashboard
-
-📸 **Screenshot Placeholder:**
 
 ![admin](<screenshots/Screenshot 2025-12-29 200052.png>) 
 ![admin](<screenshots/Screenshot 2025-12-29 200037.png>) 
