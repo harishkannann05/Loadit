@@ -10,8 +10,7 @@
 
 📸 **Screenshot Placeholder:**
 
-![logo](image-1.png)
-
+![logo](screenshots/Load.it.png)
 The project features a **custom hand-crafted logo** designed specifically for Load It.
 
 **Slogan:**
@@ -27,8 +26,7 @@ This represents the simplicity and efficiency of the platform—from booking to 
 📸 **Screenshot Placeholder:**
 
 
-![home page](image.png)
-
+![home page](<screenshots/Screenshot 2025-12-29 193948.png>)
 * Interactive and modern UI design
 * Clean layout with smooth navigation
 * Highlights core features such as booking, tracking, and reliability
