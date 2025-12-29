@@ -1,0 +1,153 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fffaf0;
+}
+/* Reset margin and padding */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* Navbar styling */
+.navbar {
+background-color: #222;
+padding: 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+color: #fff;
+}
+
+/* Logo styling */
+.logo img {
+height: 40px; /* Adjust size as needed */
+width: auto;
+}
+
+/* Nav links styling */
+.nav-links {
+list-style: none;
+display: flex;
+gap: 20px;
+}
+
+.nav-links li a {
+color: #fff;
+text-decoration: none;
+font-weight: bold;
+}
+
+.nav-links li a:hover {
+color: #ddd;
+}
+
+
+main {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns in a row */
+  gap: 20px;
+}
+
+.feature-card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensures image fits within rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card img {
+width: 100%; /* Full width image */
+height: 150px; /* Reduced height for image */
+object-fit: cover; /* Ensures image covers area without distortion */
+}
+
+.feature-card-content {
+padding: 10px; /* Reduced padding */
+text-align: center;
+}
+
+.feature-card-content h3 {
+font-size: 16px; /* Smaller font size for titles */
+margin-bottom: 5px; /* Reduced margin */
+color: #070707;
+}
+
+.feature-card-content p {
+font-size: 12px; /* Smaller font size for description */
+color: #030303;
+margin-bottom: 10px;
+border-radius: 20px; /* Reduced margin */
+}
+
+.feature-card-content button {
+background-color: #000; /* Black button */
+color:#f0ede5; /* White text */
+border: 2px solid transparent; /* No border initially */
+padding: 10px 20px;
+font-size: 14px;
+border-radius: 20px; /* Curved border */
+cursor: pointer;
+transition: all 0.3s ease; /* Smooth transition */
+}
+
+.feature-card-content button:hover {
+background-color: transparent; /* Transparent background on hover */
+color: #000; /* Black text on hover */
+border: 2px solid #000; /* Black border on hover */
+}
+.form-card {
+background: #fddaa5;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+padding: 20px;
+margin-bottom: 20px;
+}
+
+.form-card h1 {
+font-size: 20px;
+margin-bottom: 15px;
+color: #333;
+text-align: center;
+}
+
+.form-card form {
+display: flex; /* Align inputs and button in the same row */
+gap: 15px; /* Add space between elements */
+flex-wrap: wrap; /* Ensure responsiveness */
+}
+
+.form-card form .form-group {
+flex: 1; /* Inputs grow to occupy available space */
+min-width: 200px; /* Prevent inputs from becoming too small */
+}
+
+.form-card form input,
+.form-card form select {
+width: 100%;
+padding: 10px; /* Matches the button padding */
+font-size: 14px;
+border: 1px solid #ccc;
+border-radius: 20px; /* Matches button styling */
+outline: none;
+transition: border-color 0.3s ease;
+}
+
+.form-card form input:focus,
+.form-card form select:focus {
+border-color: #000; /* Highlight on focus */
+}

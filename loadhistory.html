@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fffaf0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 26px;
+            color: black;
+        }
+
+        .order-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .order-table th, .order-table td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .order-table th {
+            background-color: #f4f4f9;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .order-table tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .status {
+            font-weight: bold;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+
+        .status.delivered {
+            color: #155724;
+            background-color: #d4edda;
+        }
+
+        .status.cancelled {
+            color: #721c24;
+            background-color: #f8d7da;
+        }
+
+        .action-button {
+            padding: 8px 15px;
+            font-size: 14px;
+            color: white;
+            background-color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .action-button:hover {
+            background-color: #444;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .summary {
+            display: none;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .order-table th, .order-table td {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .action-button {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+        }
+
+        nav {
+            background-color: black;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav li {
+            margin-left: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="userdashboard.php">Profile</a></li>
+            <li><a href="ownerlogin.php">Truck Owner</a></li>
+            <li><a href="driverlogin.php">Driver</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>Order History</h1>
+        </div>
+
+        <table class="order-table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Date</th>
+                    <th>Items</th>
+                    <th>Status</th>
+                    <th>Amount</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#12345</td>
+                    <td>15th Dec 2024</td>
+                    <td>Electronics, Documents</td>
+                    <td><span class="status delivered">Successfully Delivered</span></td>
+                    <td>&#8377; 25,000</td>
+                    <td><button class="action-button" onclick="toggleSummary(this)">View Details</button></td>
+                </tr>
+                <tr class="summary">
+                    <td colspan="6">
+                        <strong>Order Summary:</strong><br>
+                        Order ID: #12345<br>
+                        Date: 15th Dec 2024<br>
+                        Items: Electronics, Documents<br>
+                        Status: Successfully Delivered<br>
+                        Amount: &#8377; 25,000
+                    </td>
+                </tr>
+                <tr>
+                    <td>#12346</td>
+                    <td>12th Dec 2024</td>
+                    <td>Furniture</td>
+                    <td><span class="status delivered">Successfully Delivered</span></td>
+                    <td>&#8377; 40,000</td>
+                    <td><button class="action-button" onclick="toggleSummary(this)">View Details</button></td>
+                </tr>
+                <tr class="summary">
+                    <td colspan="6">
+                        <strong>Order Summary:</strong><br>
+                        Order ID: #12346<br>
+                        Date: 12th Dec 2024<br>
+                        Items: Furniture<br>
+                        Status: Successfully Delivered<br>
+                        Amount: &#8377; 40,000
+                    </td>
+                </tr>
+                <tr>
+                    <td>#12347</td>
+                    <td>10th Dec 2024</td>
+                    <td>Clothing</td>
+                    <td><span class="status delivered">Successfully Delivered</span></td>
+                    <td>&#8377; 30,000</td>
+                    <td><button class="action-button" onclick="toggleSummary(this)">View Details</button></td>
+                </tr>
+                <tr class="summary">
+                    <td colspan="6">
+                        <strong>Order Summary:</strong><br>
+                        Order ID: #12347<br>
+                        Date: 10th Dec 2024<br>
+                        Items: Clothing<br>
+                        Status: Successfully Delivered<br>
+                        Amount: &#8377; 30,000
+                    </td>
+                </tr>
+                <tr>
+                    <td>#12348</td>
+                    <td>8th Dec 2024</td>
+                    <td>Machinery</td>
+                    <td><span class="status delivered">Successfully Delivered</span></td>
+                    <td>&#8377; 35,000</td>
+                    <td><button class="action-button" onclick="toggleSummary(this)">View Details</button></td>
+                </tr>
+                <tr class="summary">
+                    <td colspan="6">
+                        <strong>Order Summary:</strong><br>
+                        Order ID: #12348<br>
+                        Date: 8th Dec 2024<br>
+                        Items: Machinery<br>
+                        Status: Successfully Delivered<br>
+                        Amount: &#8377; 35,000
+                    </td>
+                </tr>
+                <tr>
+                    <td>#12349</td>
+                    <td>5th Dec 2024</td>
+                    <td>Perishable Goods</td>
+                    <td><span class="status cancelled">Cancelled</span></td>
+                    <td>&#8377; 20,000</td>
+                    <td><button class="action-button" onclick="toggleSummary(this)">View Details</button></td>
+                </tr>
+                <tr class="summary">
+                    <td colspan="6">
+                        <strong>Order Summary:</strong><br>
+                        Order ID: #12349<br>
+                        Date: 5th Dec 2024<br>
+                        Items: Perishable Goods<br>
+                        Status: Cancelled<br>
+                        Amount: &#8377; 20,000
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: left; margin-top: 20px;">
+            <button onclick="goBack()" style="padding: 10px 20px; background-color: black; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
+                Back
+            </button>
+        </div>
+        
+
+        <div class="footer">
+            <p>&copy; 2024 LoadIt. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleSummary(button) {
+            const row = button.closest('tr');
+            const nextRow = row.nextElementSibling;
+            if (nextRow && nextRow.classList.contains('summary')) {
+                nextRow.style.display = nextRow.style.display === 'table-row' ? 'none' : 'table-row';
+            }
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

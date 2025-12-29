@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders Completed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fffaf0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 26px;
+            color: black;
+        }
+
+        .order-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .order-table th, .order-table td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .order-table th {
+            background-color: #f4f4f9;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .order-table tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .status {
+            font-weight: bold;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+
+        .status.delivered {
+            color: #155724;
+            background-color: #d4edda;
+        }
+
+        .status.cancelled {
+            color: #721c24;
+            background-color: #f8d7da;
+        }
+
+        .action-button {
+            padding: 8px 15px;
+            font-size: 14px;
+            color: white;
+            background-color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .action-button:hover {
+            background-color: #333;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .summary-footer {
+            margin-top: 20px;
+            text-align: right;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: white;
+            background-color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #333;
+        }
+
+        .summary {
+            display: none;
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        nav {
+            background-color: black;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav li {
+            margin-left: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="ownerdashboard.php">Profile</a></li>
+            <li><a href="driverlogin.php">Driver</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>Orders Completed</h1>
+        </div>
+
+        <table class="order-table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Date</th>
+                    <th>Pickup Location</th>
+                    <th>Delivery Location</th>
+                    <th>Status</th>
+                    <th>Distance (km)</th>
+                    <th>Amount (₹)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#TN001</td>
+                    <td>15th Dec 2024</td>
+                    <td>Chennai</td>
+                    <td>Coimbatore</td>
+                    <td><span class="status delivered">Delivered</span></td>
+                    <td>510</td>
+                    <td>₹1500</td>
+                    <td><button class="action-button" onclick="toggleSummary(this)">View Details</button></td>
+                </tr>
+                <tr class="summary">
+                    <td colspan="8">
+                        Order ID: #TN001<br>
+                        Date: 15th Dec 2024<br>
+                        Pickup Location: Chennai<br>
+                        Delivery Location: Coimbatore<br>
+                        Status: Delivered<br>
+                        Distance: 510 km<br>
+                        Amount: ₹1500
+                    </td>
+                </tr>
+                <tr>
+                    <td>#TN002</td>
+                    <td>12th Dec 2024</td>
+                    <td>Madurai</td>
+                    <td>Salem</td>
+                    <td><span class="status delivered">Delivered</span></td>
+                    <td>300</td>
+                    <td>₹1200</td>
+                    <td><button class="action-button" onclick="toggleSummary(this)">View Details</button></td>
+                </tr>
+                <tr class="summary">
+                    <td colspan="8">
+                        Order ID: #TN002<br>
+                        Date: 12th Dec 2024<br>
+                        Pickup Location: Madurai<br>
+                        Delivery Location: Salem<br>
+                        Status: Delivered<br>
+                        Distance: 300 km<br>
+                        Amount: ₹1200
+                    </td>
+                </tr>
+                <tr>
+                    <td>#TN003</td>
+                    <td>10th Dec 2024</td>
+                    <td>Trichy</td>
+                    <td>Tirunelveli</td>
+                    <td><span class="status delivered">Delivered</span></td>
+                    <td>410</td>
+                    <td>₹1300</td>
+                    <td><button class="action-button" onclick="toggleSummary(this)">View Details</button></td>
+                </tr>
+                <tr class="summary">
+                    <td colspan="8">
+                        Order ID: #TN003<br>
+                        Date: 10th Dec 2024<br>
+                        Pickup Location: Trichy<br>
+                        Delivery Location: Tirunelveli<br>
+                        Status: Delivered<br>
+                        Distance: 410 km<br>
+                        Amount: ₹1300
+                    </td>
+                </tr>
+                <tr>
+                    <td>#TN004</td>
+                    <td>8th Dec 2024</td>
+                    <td>Erode</td>
+                    <td>Thanjavur</td>
+                    <td><span class="status cancelled">Cancelled</span></td>
+                    <td>230</td>
+                    <td>₹0</td>
+                    <td><button class="action-button" onclick="toggleSummary(this)">View Details</button></td>
+                </tr>
+                <tr class="summary">
+                    <td colspan="8">
+                        Order ID: #TN004<br>
+                        Date: 8th Dec 2024<br>
+                        Pickup Location: Erode<br>
+                        Delivery Location: Thanjavur<br>
+                        Status: Cancelled<br>
+                        Distance: 230 km<br>
+                        Amount: ₹0
+                    </td>
+                </tr>
+                <tr>
+                    <td>#TN005</td>
+                    <td>5th Dec 2024</td>
+                    <td>Vellore</td>
+                    <td>Kanyakumari</td>
+                    <td><span class="status delivered">Delivered</span></td>
+                    <td>630</td>
+                    <td>₹2000</td>
+                    <td><button class="action-button" onclick="toggleSummary(this)">View Details</button></td>
+                </tr>
+                <tr class="summary">
+                    <td colspan="8">
+                        Order ID: #TN005<br>
+                        Date: 5th Dec 2024<br>
+                        Pickup Location: Vellore<br>
+                        Delivery Location: Kanyakumari<br>
+                        Status: Delivered<br>
+                        Distance: 630 km<br>
+                        Amount: ₹2000
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="summary-footer">
+            Total Distance: 2080 km<br>
+            Total Earnings: ₹6000
+        </div>
+        <a class="back-button" href="ownerdashboard.php">Back</a>
+
+        <div class="footer">
+            <p>&copy; 2024 LoadIt. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleSummary(button) {
+            const row = button.closest("tr");
+            const summaryRow = row.nextElementSibling;
+            summaryRow.style.display = summaryRow.style.display === "none" ? "table-row" : "none";
+        }
+    </script>
+</body>
+</html>

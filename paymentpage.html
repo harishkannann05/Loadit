@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Payment</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fffaf0;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #000;
+            padding: 10px 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar img {
+            height: 40px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #fff;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #005a8d;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .secure-text {
+            font-size: 14px;
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .payment-icons img {
+            width: 50px;
+        }
+
+        button {
+            background: black;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #333;
+        }
+
+        .payment-success {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .home-btn {
+            display: none;
+            background: #000000;
+            color: white;
+            padding: 15px 30px;
+            margin-top: 20px;
+            border-radius: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .home-btn:hover {
+            background: #1e2124;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <div class="navbar">
+        <img src="Loaditwhite.png" alt="Logo">
+        <div>
+            <a href="index.html">Home</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Secure Payment Section -->
+    <div class="container">
+        <h2>Complete Your Payment</h2>
+        <p>Secure and seamless payments for your logistics services.</p>
+        <p><strong>Advance Amount: ₹5000</strong></p>
+        
+        <div class="payment-icons">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.-Uuj69x4V4BH9Ioba1vT5QHaE8&pid=Api&P=0&h=180" alt="Paytm">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.PaXQW6izZ13Exd-zWW3BWgHaE8&pid=Api&P=0&h=180" alt="Google Pay">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.oq58pS3gKf3Wu4H_pEb-KwHaHa&pid=Api&P=0&h=180" alt="Visa">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.1QbKTy29W09b-vPZi9xtcwHaF5&pid=Api&P=0&h=180" alt="Mastercard">
+        </div>
+        
+        <p class="secure-text">✔ 100% Secure Payment • Encrypted Transactions</p>
+        
+        <button id="pay-btn">Proceed to Pay</button>
+
+        <div class="payment-success" id="payment-success">
+            <h3>Payment Successful!</h3>
+            <p>Your payment has been processed successfully.</p>
+            <p><strong>Transaction ID:</strong> <span id="transaction-id"></span></p>
+        </div>
+
+        <!-- Home Page Button -->
+        <a href="userlogin.php" class="home-btn" id="home-btn">Go to Profile</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Logistics Partner. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('pay-btn').onclick = function() {
+            var options = {
+                "key": "rzp_test_05tqwvxMkWNnY0", // Your Razorpay Key
+                "amount": 500000, // Amount in paisa (₹5000)
+                "currency": "INR",
+                "name": "Logistics Partner",
+                "description": "Secure Payment for Transport Services",
+                "image": "https://your-logo-url.com/logo.png",
+                "handler": function (response) {
+                    document.getElementById('payment-success').style.display = 'block';
+                    document.getElementById('transaction-id').textContent = response.razorpay_payment_id;
+                    document.getElementById('home-btn').style.display = 'inline-block'; // Show the "Go to Home Page" button
+                },
+                "prefill": {
+                    "name": "John Doe",
+                    "email": "johndoe@example.com",
+                    "contact": "9876543210"
+                },
+                "theme": {
+                    "color": "#005a8d"
+                }
+            };
+            var rzp1 = new Razorpay(options);
+            rzp1.open();
+        };
+    </script>
+</body>
+</html>

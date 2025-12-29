@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Order History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fffaf0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 26px;
+            color: black;
+        }
+
+        .order-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .order-table th, .order-table td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .order-table th {
+            background-color: #f4f4f9;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .order-table tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .status {
+            font-weight: bold;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+
+        .status.delivered {
+            color: #155724;
+            background-color: #d4edda;
+        }
+
+        .status.cancelled {
+            color: #721c24;
+            background-color: #f8d7da;
+        }
+
+        .action-button {
+            padding: 8px 15px;
+            font-size: 14px;
+            color: white;
+            background-color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .action-button:hover {
+            background-color: #333;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .summary-row {
+            background-color: #f9f9f9;
+        }
+
+        .summary-row td {
+            padding: 15px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: white;
+            background-color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #333;
+        }
+
+        .total-earnings {
+            margin-top: 20px;
+            text-align: right;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+        nav {
+            background-color: black;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav li {
+            margin-left: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="userdashboard.html">Profile</a></li>
+            <li><a href="ownerlogin.php">Truck Owner</a></li>
+            <li><a href="driverlogin.php">Driver</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="header">
+            <h1>Transported Loads History</h1>
+        </div>
+
+        <table class="order-table" id="orderTable">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Date</th>
+                    <th>Pickup Location</th>
+                    <th>Delivery Location</th>
+                    <th>Status</th>
+                    <th>Amount (₹)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#TN001</td>
+                    <td>15th Dec 2024</td>
+                    <td>Chennai</td>
+                    <td>Coimbatore</td>
+                    <td><span class="status delivered">Delivered</span></td>
+                    <td>₹1500</td>
+                    <td><button class="action-button" onclick="viewDetails(this, '#TN001')">View Details</button></td>
+                </tr>
+                <tr>
+                    <td>#TN002</td>
+                    <td>12th Dec 2024</td>
+                    <td>Madurai</td>
+                    <td>Salem</td>
+                    <td><span class="status delivered">Delivered</span></td>
+                    <td>₹1200</td>
+                    <td><button class="action-button" onclick="viewDetails(this, '#TN002')">View Details</button></td>
+                </tr>
+                <tr>
+                    <td>#TN003</td>
+                    <td>10th Dec 2024</td>
+                    <td>Trichy</td>
+                    <td>Tirunelveli</td>
+                    <td><span class="status cancelled">Cancelled</span></td>
+                    <td>₹0</td>
+                    <td><button class="action-button" onclick="viewDetails(this, '#TN003')">View Details</button></td>
+                </tr>
+                <tr>
+                    <td>#TN004</td>
+                    <td>8th Dec 2024</td>
+                    <td>Erode</td>
+                    <td>Thanjavur</td>
+                    <td><span class="status delivered">Delivered</span></td>
+                    <td>₹1000</td>
+                    <td><button class="action-button" onclick="viewDetails(this, '#TN004')">View Details</button></td>
+                </tr>
+                <tr>
+                    <td>#TN005</td>
+                    <td>5th Dec 2024</td>
+                    <td>Vellore</td>
+                    <td>Kanyakumari</td>
+                    <td><span class="status cancelled">Cancelled</span></td>
+                    <td>₹0</td>
+                    <td><button class="action-button" onclick="viewDetails(this, '#TN005')">View Details</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="total-earnings" id="totalEarnings">
+            Total Earnings: ₹0
+        </div>
+
+        <a href="driverdashboard.php" class="back-button">Back</a>
+
+        <div class="footer">
+            <p>&copy; 2024 LoadIt. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        function viewDetails(button, orderID) {
+            const summaries = {
+                "#TN001": "Order ID: #TN001<br>Date: 15th Dec 2024<br>Pickup: Chennai<br>Delivery: Coimbatore<br>Status: Delivered<br>Amount: ₹1500",
+                "#TN002": "Order ID: #TN002<br>Date: 12th Dec 2024<br>Pickup: Madurai<br>Delivery: Salem<br>Status: Delivered<br>Amount: ₹1200",
+                "#TN003": "Order ID: #TN003<br>Date: 10th Dec 2024<br>Pickup: Trichy<br>Delivery: Tirunelveli<br>Status: Cancelled<br>Amount: ₹0",
+                "#TN004": "Order ID: #TN004<br>Date: 8th Dec 2024<br>Pickup: Erode<br>Delivery: Thanjavur<br>Status: Delivered<br>Amount: ₹1000",
+                "#TN005": "Order ID: #TN005<br>Date: 5th Dec 2024<br>Pickup: Vellore<br>Delivery: Kanyakumari<br>Status: Cancelled<br>Amount: ₹0"
+            };
+
+            const table = document.getElementById('orderTable');
+            const currentRow = button.parentElement.parentElement;
+            
+            // Check if a summary row already exists
+            const nextRow = currentRow.nextElementSibling;
+            if (nextRow && nextRow.classList.contains('summary-row')) {
+                nextRow.remove();
+                return;
+            }
+
+            // Remove any existing summary rows
+            const existingSummary = document.querySelector('.summary-row');
+            if (existingSummary) existingSummary.remove();
+
+            // Insert a new summary row
+            const summaryRow = document.createElement('tr');
+            summaryRow.classList.add('summary-row');
+            const summaryCell = document.createElement('td');
+            summaryCell.colSpan = 7;
+            summaryCell.innerHTML = summaries[orderID];
+            summaryRow.appendChild(summaryCell);
+            currentRow.after(summaryRow);
+        }
+
+        function calculateTotalEarnings() {
+            const rows = document.querySelectorAll('.order-table tbody tr');
+            let total = 0;
+            rows.forEach(row => {
+                const status = row.querySelector('.status').textContent.trim();
+                if (status === 'Delivered') {
+                    const amount = parseInt(row.cells[5].textContent.replace('₹', ''), 10);
+                    total += amount;
+                }
+            });
+            document.getElementById('totalEarnings').textContent = `Total Earnings: ₹${total}`;
+        }
+
+        window.onload = calculateTotalEarnings;
+    </script>
+</body>
+</html>

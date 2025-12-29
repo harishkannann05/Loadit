@@ -1,0 +1,49 @@
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="Load.itwhite.png" alt="Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="userdashboard.html">Profile</a></li>
+            <li><a href="owenersign.html">Truck Owner</a></li>
+            <li><a href="driverlogin.html">Driver</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sign Up Form -->
+    <div class="container">
+        <div class="form-container">
+            <div class="heading-box">
+                <h2>Sign Up</h2>
+            </div>
+            <form action="signup_backend.php" method="POST" enctype="multipart/form-data">
+                <fieldset>
+                    <legend>Driver's Info</legend><br>
+                    <input type="text" name="full_name" placeholder="Full Name"  >
+                    <input type="text" name="address" placeholder="Address"  >
+                    <input type="tel" name="phone_number" placeholder="Phone Number" pattern="[0-9]{10}" >
+                    <input type="email" name="email" placeholder="Email"  >
+                    <input type="password" name="password" placeholder="Password"  >
+                </fieldset>
+                <fieldset>
+                    <legend>Driver's Documents</legend><br>
+                    <label for="aadhar">Aadhar Card</label>
+                    <input type="file" name="aadhar" accept=".pdf,.jpg,.jpeg,.png"   aria-label="Aadhar Card">
+                    <label for="license">Driver's License</label>
+                    <input type="file" name="license" accept=".pdf,.jpg,.jpeg,.png"   aria-label="Driver's License">
+                    <label for="photo">Profile Photo</label>
+                    <input type="file" name="photo" accept=".jpg,.jpeg,.png"   aria-label="Profile Photo">
+                </fieldset>
+                <button type="button" onclick="window.location.href='driverdashboard.html';">Create Account</button>
+            </form>
+            <div class="footer">
+                <p>Already have an account? <a href="driverdashboard.html">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+</body>

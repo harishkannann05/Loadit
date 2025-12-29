@@ -1,0 +1,86 @@
+.form-control {
+    border-radius: 20px;
+}
+
+/* Style for curved button */
+#booking-form .btn {
+    border-radius: 25px;
+}
+.logo img {
+    max-width: 100px;
+    height: auto;
+    align-items: center;
+}
+.feature-box {
+    border-radius: 15px; /* Adjust this value for more or less roundness */
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better appearance */
+}
+
+.feature-bbox {
+    border-radius: 15px; /* Adjust this value for more or less roundness */
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better appearance */
+    background-color: #fffaf0; /* Adjust as needed */
+}
+
+.feature-card {
+    display: flex;
+    align-items: center;
+    border-radius: 15px; /* Adjust for desired roundness */
+    overflow: hidden; /* Ensures image doesn't exceed border radius */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    background-color: #fffaf0; /* Adjust as needed */
+    max-width: 2000px; /* Optional, adjust based on your layout */
+    max-height: 600px;
+    margin: 120px; /* Space around each card */
+}
+
+.feature-image {
+    width: 500px; /* Adjust image width */
+    height: 500px; /* Adjust image height */
+    object-fit: cover; /* Ensures image fits within bounds */
+    border-radius: 15px 0 0 15px; /* Curved only on left side */
+}
+.feature-rimage {
+    width: 500px; /* Adjust image width */
+    height: 500px; /* Adjust image height */
+    object-fit: cover; /* Ensures image fits within bounds */
+    border-radius: 0 15px 15px 0; /* Curved only on the right side */
+}
+
+.feature-text {
+    padding: 20px;
+    flex: 1; /* Makes text container fill remaining space */
+}
+
+/* .feature-card {
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    max-width: 2000px;
+    max-height: 2000px;
+    margin: 40px; /* Reduced space around each card */
+} */
+
+.feature-text {
+    padding: 20px;
+    flex: 1; /* Makes text container fill remaining space */
+}
+
+/* Image on the right side */
+.feature-image-right {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 0 15px 15px 0; /* Rounded on right side only */
+}
+
+.previous-section {
+    margin-bottom: 10px; /* Adjust this value to reduce the gap */
+}
+.hi{    background-color: #fefefa; /* Adjust as needed */
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Sign-Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/user.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="Load.itwhite.png" alt="Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="userdashboard.php">Profile</a></li>
+            <li><a href="ownersign.php">Truck Owner</a></li>
+            <li><a href="driverlogin.php">Driver</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sign-Up Form -->
+    <div class="container">
+        <div class="form-container">
+            <div class="heading-box">
+                <h2>User Sign-Up</h2>
+            </div>
+            <form action="datacopy.php" method="post">
+                <fieldset>
+                    <legend>User Info</legend>
+                    <input type="text" name="name" placeholder="User Name" required>
+                    <input type="email" name="email" placeholder="Gmail" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{10}" required>
+                </fieldset>
+
+                <button type="submit">Sign Up</button>
+            </form>
+
+            <div class="footer">
+                <p>Already have an account? <a href="logincopy.php">Login</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

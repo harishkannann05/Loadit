@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feature Page</title>
+
+  		<link rel="stylesheet" href="css/booking.css">
+<style>        body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fdeed1;
+}
+</style></style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <img src="Load.itwhite.png" style="height: 30px; width: 90px;" alt="Logo">
+      <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="userlogin.php">Profile</a></li>
+            <li><a href="ownerlogin.php">Truck Owner</a></li>
+            <li><a href="driverlogin.php">Driver</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+  
+  <div class="form-card">
+    <h1>Book Your Load</h1>
+    <form>
+      <div class="form-group">
+        <label for="sender-name">Sender Name</label>
+        <input type="text" id="sender-name" name="sender-name" placeholder="Enter sender's name" required>
+      </div>
+      <div class="form-group">
+        <label for="sender-phone">Sender Phone Number</label>
+        <input type="tel" id="sender-phone" name="sender-phone" placeholder="Enter sender's phone number" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="receiver-name">Receiver Name</label>
+        <input type="text" id="receiver-name" name="receiver-name" placeholder="Enter receiver's name" required>
+      </div>
+      <div class="form-group">
+        <label for="receiver-phone">Receiver Phone Number</label>
+        <input type="tel" id="receiver-phone" name="receiver-phone" placeholder="Enter receiver's phone number" required>
+      </div>
+      <div class="form-group">
+        <label for="driverid">Driver id (optional)</label>
+        <input type="text" id="driverid" name="driverid" placeholder="specific driver wants" required>
+      </div>
+      <div class="form-group">
+        <label for="from-address">From Address</label>
+        <input type="text" id="from-address" name="from-address" placeholder="Enter from address" required>
+      </div>
+      <div class="form-group">
+        <label for="to-address">To Address</label>
+        <input type="text" id="to-address" name="to-address" placeholder="Enter to address" required>
+      </div>
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+      <div class="form-group">
+        <label for="load-type">Type of Load</label>
+        <select id="load-type" name="load-type" required>
+          <option value="" disabled selected>Select load type</option>
+          <option value="dry">Dry Goods</option>
+          <option value="refrigerated">Refrigerated</option>
+          <option value="hazardous">Hazardous Materials</option>
+          <option value="oversized">Oversized</option>
+          <option value="food">Food and Beverages</option>
+          <option value="furniture">Furniture</option>
+          <option value="chemicals">Chemicals</option>
+          <option value="building-materials">Building Materials</option>
+          <option value="consumer-products">Consumer Products (e.g., Electronics)</option>
+        </select>
+      </div>
+      
+    </form>
+  </div>
+    
+  
+<!-- Truck Cards -->
+<div class="features">
+  <!-- Truck Cards -->
+  <div class="feature-card" id="open-truck">
+    <img src="open.png" alt="Open Truck">
+    <div class="feature-card-content">
+      <h3>Open Truck</h3>
+      <p>Max Load 7.5 - 43 Ton</p>
+      <button onclick="navigateToSummary('Open Truck', '7.5 - 43 Ton')">Book It</button>
+    </div>
+  </div>
+
+  <div class="feature-card" id="lcv">
+    <img src="lcv.png" alt="LCV">
+    <div class="feature-card-content">
+      <h3>LCV</h3>
+      <p>Max Load 2.5 - 7 Ton (Open/Close)</p>
+      <button onclick="navigateToSummary('LCV', '2.5 - 7 Ton (Open/Close)')">Book It</button>
+    </div>
+  </div>
+
+  <div class="feature-card" id="mini-pickup">
+    <img src="minitruck.png" alt="Mini/Pickup">
+    <div class="feature-card-content">
+      <h3>Mini/Pickup</h3>
+      <p>Max Load 0.75 - 2 Ton (Dost, TATA ACE)</p>
+      <button onclick="navigateToSummary('Mini/Pickup', '0.75 - 2 Ton (Dost, TATA ACE)')">Book It</button>
+    </div>
+  </div>
+
+  <div class="feature-card" id="container">
+    <img src="container.png" alt="Container">
+    <div class="feature-card-content">
+      <h3>Container</h3>
+      <p>Max Load 9 - 30 Ton</p>
+      <button onclick="navigateToSummary('Container', '9 - 30 Ton')">Book It</button>
+    </div>
+  </div>
+
+  <div class="feature-card" id="tipper">
+    <img src="tipper.png" alt="Tipper">
+    <div class="feature-card-content">
+      <h3>Tipper</h3>
+      <p>Max Load 9 - 30 Ton</p>
+      <button onclick="navigateToSummary('Tipper', '9 - 30 Ton')">Book It</button>
+    </div>
+  </div>
+
+  <div class="feature-card" id="trailer">
+    <img src="tailer1.png" alt="Trailer">
+    <div class="feature-card-content">
+      <h3>Trailer</h3>
+      <p>Max Load 9 - 30 Ton</p>
+      <button onclick="navigateToSummary('Trailer', '9 - 30 Ton')">Book It</button>
+    </div>
+  </div>
+
+  <div class="feature-card" id="tanker">
+    <img src="tanker.png" alt="Tanker">
+    <div class="feature-card-content">
+      <h3>Tanker</h3>
+      <p>Max Load 8 - 36 Ton</p>
+      <button onclick="navigateToSummary('Tanker', '8 - 36 Ton')">Book It</button>
+    </div>
+  </div>
+
+  <div class="feature-card" id="dumper">
+    <img src="dumper.png" alt="Dumper">
+    <div class="feature-card-content">
+      <h3>Dumper</h3>
+      <p>Max Load 9 - 36 Ton</p>
+      <button onclick="navigateToSummary('Dumper', '9 - 36 Ton')">Book It</button>
+    </div>
+  </div>
+
+  <div class="feature-card" id="bulker">
+    <img src="bulker.png" alt="Bulker">
+    <div class="feature-card-content">
+      <h3>Bulker</h3>
+      <p>Max Load 20 - 36 Ton</p>
+      <button onclick="navigateToSummary('Bulker', '20 - 36 Ton')">Book It</button>
+    </div>
+  </div>
+
+  <div class="feature-card" id="borewells">
+    <img src="borewell.png" alt="Borewells">
+    <div class="feature-card-content">
+      <h3>Borewells</h3>
+      <p>Details coming soon...</p>
+      <button onclick="navigateToSummary('Borewells')">Book It</button>
+    </div>
+  </div>
+</div>
+    
+  
+</main>
+<script>
+function navigateToSummary(type, tonnage) {
+  // Validate the form fields
+  const senderName = document.getElementById("sender-name").value.trim();
+  const senderPhone = document.getElementById("sender-phone").value.trim();
+  const receiverName = document.getElementById("receiver-name").value.trim();
+  const receiverPhone = document.getElementById("receiver-phone").value.trim();
+  const fromAddress = document.getElementById("from-address").value.trim();
+  const toAddress = document.getElementById("to-address").value.trim();
+  const date = document.getElementById("date").value.trim();
+  const loadType = document.getElementById("load-type").value;
+
+  // Check if any required field is empty
+  if (!senderName || !senderPhone || !receiverName || !receiverPhone || !fromAddress || !toAddress || !date || !loadType) {
+      alert("Please fill in all required fields before proceeding.");
+      return;
+  }
+
+  // Save form data in localStorage
+  localStorage.setItem("senderName", senderName);
+  localStorage.setItem("senderPhone", senderPhone);
+  localStorage.setItem("receiverName", receiverName);
+  localStorage.setItem("receiverPhone", receiverPhone);
+  localStorage.setItem("fromAddress", fromAddress);
+  localStorage.setItem("toAddress", toAddress);
+  localStorage.setItem("date", date);
+
+  // Save truck and load details
+  localStorage.setItem("truckType", type);
+  localStorage.setItem("loadData", tonnage);
+  localStorage.setItem("loadType", loadType); // Save the selected type of goods
+
+  // Redirect to summary page
+  window.location.href = "save_booking.php";
+}
+</script>
+</body>
+</html>

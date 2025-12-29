@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fffaf0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #222;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+/* Logo styling */
+.navbar img {
+    height: 30px;
+    width: 90px;
+}
+
+/* Nav links styling */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links li a:hover {
+    color: #ddd;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+.card-image {
+    flex: 1;
+    background-image: url(slider10.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.card-content {
+    flex: 1.5;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-content h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.card-content p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    width: 120px;
+    padding: 10px;
+    border: 2px solid black;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: transparent;
+    color: black;
+}
+
+.card1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    padding: 20px;
+}
+#tonnage-dropdown {
+    border-radius: 20px; /* Curved edges */
+    padding: 10px; /* Adding some padding for better appearance */
+    font-size: 1em; /* Ensuring the font size is legible */
+    border: 2px solid #ccc; /* Optional: Add a border color */
+    outline: none; /* Removes the outline when selected */
+    width: 100%; /* Makes it responsive */
+    max-width: 300px; /* Optional: restrict width */
+}
+
+#tonnage-dropdown:focus {
+    border-color: #333; /* Optional: Change border color on focus */
+}
+
+
